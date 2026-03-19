@@ -6,355 +6,58 @@
     <title>بطاقة تهنئة عيد الفطر المبارك 1447هـ</title>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800;900&display=swap');
-        
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        
-        body {
-            font-family: 'Cairo', sans-serif;
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            padding: 20px;
-            color: #fff;
-            background-color: #d6d2cc;
-            background-image: url('brand-bg.jpeg');
-            background-size: cover;
-            background-position: center;
-            background-attachment: fixed;
-            position: relative;
-        }
-
-        body::before {
-            content: '';
-            position: fixed;
-            inset: 0;
-            background: rgba(26, 26, 46, 0.82);
-            z-index: 0;
-        }
-
+        body { font-family: 'Cairo', sans-serif; min-height: 100vh; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 20px; color: #fff; background-color: #d6d2cc; background-image: url('brand-bg.jpeg'); background-size: cover; background-position: center; background-attachment: fixed; position: relative; }
+        body::before { content: ''; position: fixed; inset: 0; background: rgba(26, 26, 46, 0.82); z-index: 0; }
         body > * { position: relative; z-index: 1; }
-
-        h1 {
-            font-size: 1.8rem;
-            margin-bottom: 6px;
-            background: linear-gradient(90deg, #e2b04a, #f0d68a, #e2b04a);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            text-align: center;
-        }
-
-        .subtitle {
-            font-size: 0.95rem;
-            color: #c0b8d0;
-            margin-bottom: 25px;
-            text-align: center;
-        }
-
-        .main-container {
-            display: flex;
-            gap: 30px;
-            align-items: flex-start;
-            flex-wrap: wrap;
-            justify-content: center;
-            max-width: 1100px;
-            width: 100%;
-        }
-
-        .controls {
-            background: rgba(255,255,255,0.07);
-            backdrop-filter: blur(14px);
-            border-radius: 18px;
-            padding: 28px;
-            width: 340px;
-            border: 1px solid rgba(255,255,255,0.1);
-        }
-
-        .controls label {
-            display: block;
-            font-size: 0.95rem;
-            font-weight: 700;
-            margin-bottom: 8px;
-            color: #e2b04a;
-        }
-
-        .gender-toggle {
-            display: flex;
-            gap: 10px;
-            margin-bottom: 20px;
-        }
-
-        .gender-btn {
-            flex: 1;
-            padding: 12px;
-            border-radius: 12px;
-            border: 2px solid rgba(255,255,255,0.15);
-            background: rgba(255,255,255,0.05);
-            color: #a0aec0;
-            font-family: 'Cairo', sans-serif;
-            font-size: 1.05rem;
-            font-weight: 700;
-            cursor: pointer;
-            transition: all 0.3s;
-            text-align: center;
-        }
-
-        .gender-btn:hover {
-            border-color: rgba(226,176,74,0.4);
-            background: rgba(226,176,74,0.08);
-        }
-
-        .gender-btn.active {
-            border-color: #e2b04a;
-            background: linear-gradient(135deg, rgba(226,176,74,0.2), rgba(226,176,74,0.08));
-            color: #e2b04a;
-            box-shadow: 0 0 20px rgba(226,176,74,0.15);
-        }
-
-        .controls select {
-            width: 100%;
-            padding: 12px 16px;
-            border-radius: 10px;
-            border: 1px solid rgba(255,255,255,0.2);
-            background: rgba(255,255,255,0.08);
-            color: #fff;
-            font-family: 'Cairo', sans-serif;
-            font-size: 0.95rem;
-            font-weight: 700;
-            outline: none;
-            transition: border-color 0.3s;
-            margin-bottom: 12px;
-            text-align: right;
-            direction: rtl;
-            cursor: pointer;
-            -webkit-appearance: none;
-            -moz-appearance: none;
-            appearance: none;
-            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8'%3E%3Cpath d='M6 8L0 0h12z' fill='%23e2b04a'/%3E%3C/svg%3E");
-            background-repeat: no-repeat;
-            background-position: left 16px center;
-        }
-
+        h1 { font-size: 1.8rem; margin-bottom: 6px; background: linear-gradient(90deg, #e2b04a, #f0d68a, #e2b04a); -webkit-background-clip: text; -webkit-text-fill-color: transparent; text-align: center; }
+        .subtitle { font-size: 0.95rem; color: #c0b8d0; margin-bottom: 25px; text-align: center; }
+        .main-container { display: flex; gap: 30px; align-items: flex-start; flex-wrap: wrap; justify-content: center; max-width: 1100px; width: 100%; }
+        .controls { background: rgba(255,255,255,0.07); backdrop-filter: blur(14px); border-radius: 18px; padding: 28px; width: 340px; border: 1px solid rgba(255,255,255,0.1); }
+        .controls label { display: block; font-size: 0.95rem; font-weight: 700; margin-bottom: 8px; color: #e2b04a; }
+        .gender-toggle { display: flex; gap: 10px; margin-bottom: 20px; }
+        .gender-btn { flex: 1; padding: 12px; border-radius: 12px; border: 2px solid rgba(255,255,255,0.15); background: rgba(255,255,255,0.05); color: #a0aec0; font-family: 'Cairo', sans-serif; font-size: 1.05rem; font-weight: 700; cursor: pointer; transition: all 0.3s; text-align: center; }
+        .gender-btn:hover { border-color: rgba(226,176,74,0.4); background: rgba(226,176,74,0.08); }
+        .gender-btn.active { border-color: #e2b04a; background: linear-gradient(135deg, rgba(226,176,74,0.2), rgba(226,176,74,0.08)); color: #e2b04a; box-shadow: 0 0 20px rgba(226,176,74,0.15); }
+        .controls select { width: 100%; padding: 12px 16px; border-radius: 10px; border: 1px solid rgba(255,255,255,0.2); background: rgba(255,255,255,0.08); color: #fff; font-family: 'Cairo', sans-serif; font-size: 0.95rem; font-weight: 700; outline: none; transition: border-color 0.3s; margin-bottom: 12px; text-align: right; direction: rtl; cursor: pointer; -webkit-appearance: none; -moz-appearance: none; appearance: none; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8'%3E%3Cpath d='M6 8L0 0h12z' fill='%23e2b04a'/%3E%3C/svg%3E"); background-repeat: no-repeat; background-position: left 16px center; }
         .controls select:focus { border-color: #e2b04a; }
-
-        .controls select option {
-            background: #1a1a2e;
-            color: #fff;
-            font-family: 'Cairo', sans-serif;
-            padding: 8px;
-        }
-
-        .controls input[type="text"] {
-            width: 100%;
-            padding: 12px 16px;
-            border-radius: 10px;
-            border: 1px solid rgba(255,255,255,0.2);
-            background: rgba(255,255,255,0.08);
-            color: #fff;
-            font-family: 'Cairo', sans-serif;
-            font-size: 1.05rem;
-            font-weight: 700;
-            outline: none;
-            transition: border-color 0.3s;
-            margin-bottom: 20px;
-            text-align: right;
-        }
-
+        .controls select option { background: #1a1a2e; color: #fff; font-family: 'Cairo', sans-serif; padding: 8px; }
+        .controls input[type="text"] { width: 100%; padding: 12px 16px; border-radius: 10px; border: 1px solid rgba(255,255,255,0.2); background: rgba(255,255,255,0.08); color: #fff; font-family: 'Cairo', sans-serif; font-size: 1.05rem; font-weight: 700; outline: none; transition: border-color 0.3s; margin-bottom: 20px; text-align: right; }
         .controls input[type="text"]:focus { border-color: #e2b04a; }
         .controls input[type="text"]::placeholder { color: rgba(255,255,255,0.35); }
-
-        #customNameWrapper {
-            display: none;
-            animation: fadeIn 0.3s ease;
-        }
-
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(-5px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-
-        .photo-upload-area {
-            border: 2px dashed rgba(255,255,255,0.2);
-            border-radius: 12px;
-            padding: 20px;
-            text-align: center;
-            cursor: pointer;
-            transition: all 0.3s;
-            margin-bottom: 20px;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .photo-upload-area:hover {
-            border-color: #e2b04a;
-            background: rgba(226,176,74,0.05);
-        }
-
-        .photo-upload-area input[type="file"] {
-            position: absolute;
-            inset: 0;
-            opacity: 0;
-            cursor: pointer;
-        }
-
+        #customNameWrapper { display: none; animation: fadeIn 0.3s ease; }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(-5px); } to { opacity: 1; transform: translateY(0); } }
+        .photo-upload-area { border: 2px dashed rgba(255,255,255,0.2); border-radius: 12px; padding: 20px; text-align: center; cursor: pointer; transition: all 0.3s; margin-bottom: 20px; position: relative; overflow: hidden; }
+        .photo-upload-area:hover { border-color: #e2b04a; background: rgba(226,176,74,0.05); }
+        .photo-upload-area input[type="file"] { position: absolute; inset: 0; opacity: 0; cursor: pointer; }
         .photo-upload-area .icon { font-size: 2.2rem; margin-bottom: 6px; }
         .photo-upload-area .text { font-size: 0.85rem; color: #a0aec0; }
-
-        .photo-upload-area .preview-thumb {
-            width: 80px;
-            height: 80px;
-            border-radius: 50%;
-            object-fit: cover;
-            margin: 0 auto;
-            display: none;
-            border: 3px solid #e2b04a;
-        }
-
-        .btn {
-            width: 100%;
-            padding: 13px;
-            border: none;
-            border-radius: 10px;
-            font-family: 'Cairo', sans-serif;
-            font-size: 1.05rem;
-            font-weight: 700;
-            cursor: pointer;
-            transition: all 0.3s;
-        }
-
-        .btn-primary {
-            background: linear-gradient(135deg, #e2b04a, #c8941e);
-            color: #1a1a2e;
-            margin-bottom: 10px;
-        }
-
-        .btn-primary:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(226,176,74,0.35);
-        }
-
-        .btn-secondary {
-            background: rgba(255,255,255,0.08);
-            color: #a0aec0;
-            border: 1px solid rgba(255,255,255,0.15);
-        }
-
-        .btn-secondary:hover {
-            background: rgba(255,255,255,0.12);
-            color: #fff;
-        }
-
-        .card-preview {
-            position: relative;
-            width: 360px;
-            height: 640px;
-            border-radius: 16px;
-            overflow: hidden;
-            box-shadow: 0 20px 60px rgba(0,0,0,0.4);
-        }
-
-        .card-preview img.template-bg {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-
-        .name-overlay {
-            position: absolute;
-            bottom: 28px;
-            right: 30px;
-            font-family: 'Cairo', sans-serif;
-            font-size: 1.55rem;
-            font-weight: 900;
-            color: #3b2d6e;
-            text-align: right;
-            direction: rtl;
-            max-width: 200px;
-            line-height: 1.3;
-            text-shadow: 0 1px 2px rgba(255,255,255,0.3);
-        }
-
-        .photo-overlay {
-            position: absolute;
-            bottom: 52px;
-            left: 18px;
-            width: 130px;
-            height: 130px;
-            border-radius: 50%;
-            overflow: hidden;
-            border: 3px solid #3b2d6e;
-            background: rgba(255,255,255,0.15);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
+        .photo-upload-area .preview-thumb { width: 80px; height: 80px; border-radius: 50%; object-fit: cover; margin: 0 auto; display: none; border: 3px solid #e2b04a; }
+        .btn { width: 100%; padding: 13px; border: none; border-radius: 10px; font-family: 'Cairo', sans-serif; font-size: 1.05rem; font-weight: 700; cursor: pointer; transition: all 0.3s; }
+        .btn-primary { background: linear-gradient(135deg, #e2b04a, #c8941e); color: #1a1a2e; margin-bottom: 10px; }
+        .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(226,176,74,0.35); }
+        .btn-secondary { background: rgba(255,255,255,0.08); color: #a0aec0; border: 1px solid rgba(255,255,255,0.15); }
+        .btn-secondary:hover { background: rgba(255,255,255,0.12); color: #fff; }
+        .card-preview { position: relative; width: 360px; height: 640px; border-radius: 16px; overflow: hidden; box-shadow: 0 20px 60px rgba(0,0,0,0.4); }
+        .card-preview img.template-bg { width: 100%; height: 100%; object-fit: cover; }
+        .name-overlay { position: absolute; bottom: 28px; right: 30px; font-family: 'Cairo', sans-serif; font-size: 1.55rem; font-weight: 900; color: #3b2d6e; text-align: right; direction: rtl; max-width: 200px; line-height: 1.3; text-shadow: 0 1px 2px rgba(255,255,255,0.3); }
+        .photo-overlay { position: absolute; bottom: 52px; left: 18px; width: 130px; height: 130px; border-radius: 50%; overflow: hidden; border: 3px solid #3b2d6e; background: rgba(255,255,255,0.15); display: flex; align-items: center; justify-content: center; }
         .photo-overlay img { width: 100%; height: 100%; object-fit: cover; }
         .photo-overlay .placeholder-icon { font-size: 2.8rem; color: rgba(59,45,110,0.4); }
-
         #downloadCanvas { display: none; }
-
-        .loading-overlay {
-            display: none;
-            position: fixed;
-            inset: 0;
-            background: rgba(0,0,0,0.6);
-            z-index: 999;
-            align-items: center;
-            justify-content: center;
-        }
-
+        .loading-overlay { display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.6); z-index: 999; align-items: center; justify-content: center; }
         .loading-overlay.active { display: flex; }
-
-        .loading-box {
-            background: #1a1a2e;
-            border-radius: 16px;
-            padding: 30px 40px;
-            text-align: center;
-            border: 1px solid rgba(226,176,74,0.3);
-        }
-
-        .spinner {
-            width: 40px;
-            height: 40px;
-            border: 4px solid rgba(226,176,74,0.2);
-            border-top-color: #e2b04a;
-            border-radius: 50%;
-            animation: spin 0.8s linear infinite;
-            margin: 0 auto 12px;
-        }
-
+        .loading-box { background: #1a1a2e; border-radius: 16px; padding: 30px 40px; text-align: center; border: 1px solid rgba(226,176,74,0.3); }
+        .spinner { width: 40px; height: 40px; border: 4px solid rgba(226,176,74,0.2); border-top-color: #e2b04a; border-radius: 50%; animation: spin 0.8s linear infinite; margin: 0 auto 12px; }
         @keyframes spin { to { transform: rotate(360deg); } }
-
-        .instructions {
-            margin-top: 20px;
-            padding: 14px;
-            border-radius: 10px;
-            background: rgba(226,176,74,0.08);
-            border: 1px solid rgba(226,176,74,0.15);
-            font-size: 0.8rem;
-            color: #a0aec0;
-            line-height: 1.7;
-        }
-
+        .instructions { margin-top: 20px; padding: 14px; border-radius: 10px; background: rgba(226,176,74,0.08); border: 1px solid rgba(226,176,74,0.15); font-size: 0.8rem; color: #a0aec0; line-height: 1.7; }
         .instructions strong { color: #e2b04a; }
-
-        @media (max-width: 768px) {
-            h1 { font-size: 1.4rem; }
-            .controls { width: 100%; max-width: 360px; }
-            .card-preview { width: 320px; height: 568px; }
-            .name-overlay { font-size: 1.3rem; bottom: 24px; right: 26px; }
-            .photo-overlay { width: 110px; height: 110px; bottom: 44px; left: 14px; }
-            .main-container { gap: 20px; }
-        }
+        @media (max-width: 768px) { h1 { font-size: 1.4rem; } .controls { width: 100%; max-width: 360px; } .card-preview { width: 320px; height: 568px; } .name-overlay { font-size: 1.3rem; bottom: 24px; right: 26px; } .photo-overlay { width: 110px; height: 110px; bottom: 44px; left: 14px; } .main-container { gap: 20px; } }
     </style>
 </head>
 <body>
-
     <h1>بطاقة تهنئة عيد الفطر المبارك 1447هـ</h1>
     <p class="subtitle">المعهد الوطني للتطوير المهني التعليمي</p>
-
     <div class="main-container">
         <div class="controls">
             <label>نوع البطاقة</label>
@@ -362,26 +65,25 @@
                 <button class="gender-btn active" id="btnBrother" onclick="selectGender('brother')">أخوكم</button>
                 <button class="gender-btn" id="btnSister" onclick="selectGender('sister')">أختكم</button>
             </div>
+            <label for="customNameInput">اكتب اسمك</label>
+            <input type="text" id="customNameInput" placeholder="اكتب اسمك هنا..." oninput="handleCustomName()">
 
-            <label for="nameSelect">اختر اسمك</label>
+            <div style="text-align:center; margin-bottom:12px; color:#a0aec0; font-size:0.85rem;">— أو اختر من القائمة —</div>
+
             <select id="nameSelect" onchange="handleNameSelect()">
                 <option value="" disabled selected>-- اختر اسمك من القائمة --</option>
-                <option value="أ. عبدالله بن عبدالعزيز العوده">أ. عبدالله بن عبدالعزيز العوده</option>
-                <option value="د. محمد بن عبدالله البنيان">د. محمد بن عبدالله البنيان</option>
-                <option value="د. سعد بن عبدالرحمن القرني">د. سعد بن عبدالرحمن القرني</option>
-                <option value="د. مها بنت شعلان القرني">د. مها بنت شعلان القرني</option>
-                <option value="أ. عبدالباري بن عبد الكريم السلمي">أ. عبدالباري بن عبد الكريم السلمي</option>
-                <option value="د. فريال بنت عبدالله الحقباني">د. فريال بنت عبدالله الحقباني</option>
-                <option value="أ. نايف بن علي الحربي">أ. نايف بن علي الحربي</option>
                 <option value="أ. أريج بنت محمد المقحم">أ. أريج بنت محمد المقحم</option>
                 <option value="أ. أسيل بنت صالح السحيباني">أ. أسيل بنت صالح السحيباني</option>
                 <option value="د. آلاء بنت علي الصويان">د. آلاء بنت علي الصويان</option>
                 <option value="أ. الجوهرة بنت سعد الودعان">أ. الجوهرة بنت سعد الودعان</option>
                 <option value="أ. أمل بنت علي الغيث">أ. أمل بنت علي الغيث</option>
+                <option value="أ. ايثار راشد">أ. ايثار راشد</option>
+                <option value="أ. بدرية بنت ثامر الظفيري">أ. بدرية بنت ثامر الظفيري</option>
                 <option value="أ. جوزاء بنت عبدالعزيز بن جامع">أ. جوزاء بنت عبدالعزيز بن جامع</option>
-                <option value="أ. حسن بن موسى الربعي">أ. حسن بن موسى الربعي</option>
                 <option value="أ. حسن بن عبدالرحمن القحطاني">أ. حسن بن عبدالرحمن القحطاني</option>
+                <option value="أ. حسن بن موسى الربعي">أ. حسن بن موسى الربعي</option>
                 <option value="د. حسين بن جابر المالكي">د. حسين بن جابر المالكي</option>
+                <option value="أ. حمد الغزي">أ. حمد الغزي</option>
                 <option value="أ. حنان بنت حمد العبدالله">أ. حنان بنت حمد العبدالله</option>
                 <option value="أ. خالد بن حمدان الشمري">أ. خالد بن حمدان الشمري</option>
                 <option value="أ. خالد بن عبدالله الرشيد">أ. خالد بن عبدالله الرشيد</option>
@@ -390,82 +92,79 @@
                 <option value="د. رنا بنت عبدالرحمن الخضير">د. رنا بنت عبدالرحمن الخضير</option>
                 <option value="د. رولا بنت محمد القويفلي">د. رولا بنت محمد القويفلي</option>
                 <option value="أ. ريماز بنت ناصر الخليفة">أ. ريماز بنت ناصر الخليفة</option>
-                <option value="أ. سارة بنت فهد الدوسري">أ. سارة بنت فهد الدوسري</option>
                 <option value="أ. سارة بنت عبدالمحسن بن ملافخ">أ. سارة بنت عبدالمحسن بن ملافخ</option>
+                <option value="أ. سارة بنت فهد الدوسري">أ. سارة بنت فهد الدوسري</option>
                 <option value="أ. سعد بن زيد الصقعبي">أ. سعد بن زيد الصقعبي</option>
+                <option value="د. سعد بن عبدالرحمن القرني">د. سعد بن عبدالرحمن القرني</option>
+                <option value="أ. سعدون بن عطية الزهراني">أ. سعدون بن عطية الزهراني</option>
+                <option value="أ. سعود بن عبدالله الحراجين">أ. سعود بن عبدالله الحراجين</option>
                 <option value="د. سليمان بن عبدالله المحسن">د. سليمان بن عبدالله المحسن</option>
                 <option value="د. سمر بنت يحيى الشريف">د. سمر بنت يحيى الشريف</option>
                 <option value="أ. سمية بنت محمد مؤذنة">أ. سمية بنت محمد مؤذنة</option>
+                <option value="د. شريفة القرني">د. شريفة القرني</option>
                 <option value="أ. شمعه بنت على عيسى شلعه">أ. شمعه بنت على عيسى شلعه</option>
+                <option value="أ. صالح بن سالم الشهري">أ. صالح بن سالم الشهري</option>
                 <option value="أ. صالح بن عبدالرحمن بن حمود">أ. صالح بن عبدالرحمن بن حمود</option>
                 <option value="أ. صالح بن محمد التميمي">أ. صالح بن محمد التميمي</option>
                 <option value="د. صلاح بن سعود العيسى">د. صلاح بن سعود العيسى</option>
+                <option value="أ. طارق الحنطي">أ. طارق الحنطي</option>
                 <option value="أ. عباد بن صلاح عويض المطيري">أ. عباد بن صلاح عويض المطيري</option>
-                <option value="د. عبدالإله بن عبدالله العوبل">د. عبدالإله بن عبدالله العوبل</option>
-                <option value="أ. عبدالله بن حمد الشدوخي">أ. عبدالله بن حمد الشدوخي</option>
                 <option value="أ. عبد الرحمن بن إبراهيم الفوزان">أ. عبد الرحمن بن إبراهيم الفوزان</option>
+                <option value="أ. عبد العزيز بن ناصر الخامسي">أ. عبد العزيز بن ناصر الخامسي</option>
+                <option value="د. عبدالإله بن عبدالله العوبل">د. عبدالإله بن عبدالله العوبل</option>
+                <option value="أ. عبدالباري السلمي">أ. عبدالباري السلمي</option>
+                <option value="أ. عبدالباري بن عبد الكريم السلمي">أ. عبدالباري بن عبد الكريم السلمي</option>
+                <option value="أ. عبدالعزيز بن صالح الحسيني">أ. عبدالعزيز بن صالح الحسيني</option>
                 <option value="أ. عبدالعزيز بن محمد المسعود">أ. عبدالعزيز بن محمد المسعود</option>
+                <option value="أ. عبدالله بن حمد الشدوخي">أ. عبدالله بن حمد الشدوخي</option>
+                <option value="أ. عبدالله بن عبدالعزيز العوده">أ. عبدالله بن عبدالعزيز العوده</option>
+                <option value="أ. عبير بنت عبدالله العقيل">أ. عبير بنت عبدالله العقيل</option>
+                <option value="أ. عبير بنت محمد منصور الشعيبي">أ. عبير بنت محمد منصور الشعيبي</option>
                 <option value="أ. علي بن أحمد عسيري">أ. علي بن أحمد عسيري</option>
                 <option value="أ. علي بن فرحان الغامدي">أ. علي بن فرحان الغامدي</option>
+                <option value="أ. عمشى بنت خليف الشمري">أ. عمشى بنت خليف الشمري</option>
                 <option value="د. عودة بن شخير العنزي">د. عودة بن شخير العنزي</option>
                 <option value="أ. غزيل بنت سالم الرشيد">أ. غزيل بنت سالم الرشيد</option>
                 <option value="أ. فاتن بنت أحمد الحربي">أ. فاتن بنت أحمد الحربي</option>
-                <option value="د. فاطمة بنت محمد الفضلي">د. فاطمة بنت محمد الفضلي</option>
                 <option value="أ. فاطمة بنت علي الخويطر">أ. فاطمة بنت علي الخويطر</option>
+                <option value="د. فاطمة بنت محمد الفضلي">د. فاطمة بنت محمد الفضلي</option>
+                <option value="د. فريال بنت عبدالله الحقباني">د. فريال بنت عبدالله الحقباني</option>
                 <option value="أ. فهد بن عبدالعزيز الحصان">أ. فهد بن عبدالعزيز الحصان</option>
-                <option value="د. فهد بن مصلح عبد الله العتيبي">د. فهد بن مصلح عبد الله العتيبي</option>
                 <option value="أ. فهد بن محمد الحسينان">أ. فهد بن محمد الحسينان</option>
+                <option value="د. فهد بن مصلح عبد الله العتيبي">د. فهد بن مصلح عبد الله العتيبي</option>
                 <option value="أ. فوزية بنت محمد الشمري">أ. فوزية بنت محمد الشمري</option>
+                <option value="أ. فيحان السبيعي">أ. فيحان السبيعي</option>
+                <option value="أ. فيصل السليم">أ. فيصل السليم</option>
+                <option value="أ. فيصل بن احمد الغامدي">أ. فيصل بن احمد الغامدي</option>
                 <option value="أ. فيصل بن عبدالله اليوسف">أ. فيصل بن عبدالله اليوسف</option>
                 <option value="أ. ماجد بن حمد الحميد">أ. ماجد بن حمد الحميد</option>
+                <option value="أ. محمد بن عبدالعزيز المقرن">أ. محمد بن عبدالعزيز المقرن</option>
+                <option value="د. محمد بن عبدالله البنيان">د. محمد بن عبدالله البنيان</option>
+                <option value="أ. محمد بن عبدالله المليحي">أ. محمد بن عبدالله المليحي</option>
+                <option value="أ. مشعل بن عواد العنزي">أ. مشعل بن عواد العنزي</option>
+                <option value="أ. معاذ التركي">أ. معاذ التركي</option>
                 <option value="أ. منال بنت سعود الناجم">أ. منال بنت سعود الناجم</option>
+                <option value="أ. منى بنت حمد عبد الله الطريف">أ. منى بنت حمد عبد الله الطريف</option>
                 <option value="أ. منيرة بنت محمد القحطاني">أ. منيرة بنت محمد القحطاني</option>
+                <option value="د. مها بنت شعلان القرني">د. مها بنت شعلان القرني</option>
+                <option value="أ. مها بنت فهد ال مخلد">أ. مها بنت فهد ال مخلد</option>
                 <option value="د. مها بنت محمد الصبحي">د. مها بنت محمد الصبحي</option>
+                <option value="د. نادر المطيري">د. نادر المطيري</option>
+                <option value="أ. ناديه بنت خليل الفريح">أ. ناديه بنت خليل الفريح</option>
                 <option value="أ. نايف بن عبود القحطاني">أ. نايف بن عبود القحطاني</option>
+                <option value="أ. نايف بن علي الحربي">أ. نايف بن علي الحربي</option>
                 <option value="أ. نوال بنت إبراهيم العواد">أ. نوال بنت إبراهيم العواد</option>
                 <option value="أ. نور بن عارف الفرحان">أ. نور بن عارف الفرحان</option>
                 <option value="أ. نورة بنت مفرح ال حبتر">أ. نورة بنت مفرح ال حبتر</option>
-                <option value="أ. هنادي بنت ناصر عسيري">أ. هنادي بنت ناصر عسيري</option>
-                <option value="أ. هناء بنت عثمان الجبير">أ. هناء بنت عثمان الجبير</option>
                 <option value="أ. هناء بنت أحمد الحمراني">أ. هناء بنت أحمد الحمراني</option>
-                <option value="أ. هيلة بنت فهد الصعب">أ. هيلة بنت فهد الصعب</option>
-                <option value="أ. عبير بنت محمد منصور الشعيبي">أ. عبير بنت محمد منصور الشعيبي</option>
-                <option value="أ. منى بنت حمد عبد الله الطريف">أ. منى بنت حمد عبد الله الطريف</option>
-                <option value="أ. مشعل بن عواد العنزي">أ. مشعل بن عواد العنزي</option>
-                <option value="أ. عبير بنت عبدالله العقيل">أ. عبير بنت عبدالله العقيل</option>
-                <option value="أ. ناديه بنت خليل الفريح">أ. ناديه بنت خليل الفريح</option>
-                <option value="أ. وعد بنت دعيج الدعيج">أ. وعد بنت دعيج الدعيج</option>
-                <option value="أ. عبد العزيز بن ناصر الخامسي">أ. عبد العزيز بن ناصر الخامسي</option>
-                <option value="أ. مها بنت فهد ال مخلد">أ. مها بنت فهد ال مخلد</option>
-                <option value="أ. سعود بن عبدالله الحراجين">أ. سعود بن عبدالله الحراجين</option>
-                <option value="أ. صالح بن سالم الشهري">أ. صالح بن سالم الشهري</option>
-                <option value="أ. محمد بن عبدالعزيز المقرن">أ. محمد بن عبدالعزيز المقرن</option>
-                <option value="أ. عبدالعزيز بن صالح الحسيني">أ. عبدالعزيز بن صالح الحسيني</option>
-                <option value="أ. محمد بن عبدالله المليحي">أ. محمد بن عبدالله المليحي</option>
-                <option value="أ. ياسر بن سعود السبر">أ. ياسر بن سعود السبر</option>
-                <option value="أ. سعدون بن عطية الزهراني">أ. سعدون بن عطية الزهراني</option>
-                <option value="أ. بدرية بنت ثامر الظفيري">أ. بدرية بنت ثامر الظفيري</option>
-                <option value="أ. ولاء بنت رجاء المطيري">أ. ولاء بنت رجاء المطيري</option>
-                <option value="أ. فيصل بن احمد الغامدي">أ. فيصل بن احمد الغامدي</option>
-                <option value="أ. معاذ التركي">أ. معاذ التركي</option>
-                <option value="د. شريفة القرني">د. شريفة القرني</option>
-                <option value="أ. فيحان السبيعي">أ. فيحان السبيعي</option>
-                <option value="أ. عمشى بنت خليف الشمري">أ. عمشى بنت خليف الشمري</option>
-                <option value="د. نادر المطيري">د. نادر المطيري</option>
+                <option value="أ. هناء بنت عثمان الجبير">أ. هناء بنت عثمان الجبير</option>
+                <option value="أ. هنادي بنت ناصر عسيري">أ. هنادي بنت ناصر عسيري</option>
                 <option value="هند بنت خلف الموكاء">هند بنت خلف الموكاء</option>
-                <option value="طارق الحنطي">طارق الحنطي</option>
-                <option value="ايثار راشد">ايثار راشد</option>
-                <option value="فيصل السليم">فيصل السليم</option>
-                <option value="عبدالباري السلمي">عبدالباري السلمي</option>
-                <option value="حمد الغزي">حمد الغزي</option>
-                <option value="__custom__">✏️ أخرى - اكتب اسمك</option>
+                <option value="أ. هيلة بنت فهد الصعب">أ. هيلة بنت فهد الصعب</option>
+                <option value="أ. وعد بنت دعيج الدعيج">أ. وعد بنت دعيج الدعيج</option>
+                <option value="أ. ولاء بنت رجاء المطيري">أ. ولاء بنت رجاء المطيري</option>
+                <option value="أ. ياسر بن سعود السبر">أ. ياسر بن سعود السبر</option>
             </select>
-
-            <div id="customNameWrapper">
-                <label for="customNameInput">اكتب اسمك</label>
-                <input type="text" id="customNameInput" placeholder="اكتب اسمك هنا..." oninput="updateName()">
-            </div>
-
             <label>الصورة الشخصية</label>
             <div class="photo-upload-area" id="uploadArea">
                 <input type="file" id="photoInput" accept="image/*" onchange="handlePhoto(event)">
@@ -473,10 +172,8 @@
                 <div class="text" id="uploadText">اضغط لرفع صورتك الشخصية</div>
                 <img class="preview-thumb" id="previewThumb">
             </div>
-
             <button class="btn btn-primary" onclick="downloadCard()">⬇ تحميل البطاقة</button>
             <button class="btn btn-secondary" onclick="resetForm()">🔄 إعادة تعيين</button>
-
             <div class="instructions">
                 <strong>الخطوات:</strong><br>
                 1. اختر نوع البطاقة (أخوكم / أختكم)<br>
@@ -485,7 +182,6 @@
                 4. اضغط "تحميل البطاقة" للحفظ
             </div>
         </div>
-
         <div class="card-preview-wrapper">
             <div class="card-preview" id="cardPreview">
                 <img class="template-bg" id="templateBg" src="template-brother.jpeg" crossorigin="anonymous">
@@ -497,24 +193,17 @@
             </div>
         </div>
     </div>
-
     <canvas id="downloadCanvas"></canvas>
-
     <div class="loading-overlay" id="loadingOverlay">
         <div class="loading-box">
             <div class="spinner"></div>
             <div>جاري تحضير البطاقة...</div>
         </div>
     </div>
-
     <script>
         let userPhoto = null;
         let currentGender = 'brother';
-
-        const templates = {
-            brother: 'template-brother.jpeg',
-            sister: 'template-sister.jpeg'
-        };
+        const templates = { brother: 'template-brother.jpeg', sister: 'template-sister.jpeg' };
 
         function selectGender(gender) {
             currentGender = gender;
@@ -524,30 +213,25 @@
         }
 
         function getSelectedName() {
+            const customName = document.getElementById('customNameInput').value.trim();
+            if (customName) return customName;
             const select = document.getElementById('nameSelect');
-            if (select.value === '__custom__') {
-                return document.getElementById('customNameInput').value.trim();
-            }
-            return select.value;
+            if (select.value) return select.value;
+            return '';
         }
 
         function handleNameSelect() {
             const select = document.getElementById('nameSelect');
-            const customWrapper = document.getElementById('customNameWrapper');
-            
-            if (select.value === '__custom__') {
-                customWrapper.style.display = 'block';
-                document.getElementById('customNameInput').focus();
-                document.getElementById('nameOverlay').textContent = '';
-            } else {
-                customWrapper.style.display = 'none';
-                document.getElementById('customNameInput').value = '';
-                document.getElementById('nameOverlay').textContent = select.value;
-            }
+            document.getElementById('customNameInput').value = '';
+            document.getElementById('nameOverlay').textContent = select.value;
         }
 
-        function updateName() {
-            document.getElementById('nameOverlay').textContent = document.getElementById('customNameInput').value;
+        function handleCustomName() {
+            const customName = document.getElementById('customNameInput').value;
+            if (customName) {
+                document.getElementById('nameSelect').selectedIndex = 0;
+            }
+            document.getElementById('nameOverlay').textContent = customName;
         }
 
         function handlePhoto(event) {
@@ -557,13 +241,11 @@
             reader.onload = function(e) {
                 userPhoto = e.target.result;
                 const thumb = document.getElementById('previewThumb');
-                thumb.src = userPhoto;
-                thumb.style.display = 'block';
+                thumb.src = userPhoto; thumb.style.display = 'block';
                 document.getElementById('uploadIcon').style.display = 'none';
                 document.getElementById('uploadText').textContent = 'اضغط لتغيير الصورة';
                 const overlayImg = document.getElementById('overlayPhoto');
-                overlayImg.src = userPhoto;
-                overlayImg.style.display = 'block';
+                overlayImg.src = userPhoto; overlayImg.style.display = 'block';
                 document.getElementById('photoPlaceholder').style.display = 'none';
             };
             reader.readAsDataURL(file);
@@ -572,60 +254,36 @@
         function downloadCard() {
             const name = getSelectedName();
             if (!name) { alert('الرجاء اختيار أو كتابة الاسم أولاً'); return; }
-
             document.getElementById('loadingOverlay').classList.add('active');
-
             const canvas = document.getElementById('downloadCanvas');
             const ctx = canvas.getContext('2d');
             const W = 900, H = 1600;
-            canvas.width = W;
-            canvas.height = H;
-
+            canvas.width = W; canvas.height = H;
             const templateImg = new Image();
             templateImg.crossOrigin = 'anonymous';
             templateImg.onload = function() {
                 ctx.drawImage(templateImg, 0, 0, W, H);
-
-                ctx.textAlign = 'right';
-                ctx.textBaseline = 'bottom';
-                ctx.fillStyle = '#3b2d6e';
+                ctx.textAlign = 'right'; ctx.textBaseline = 'bottom'; ctx.fillStyle = '#3b2d6e';
                 ctx.font = '900 56px Cairo, sans-serif';
-                if (ctx.measureText(name).width > 460) {
-                    ctx.font = '900 44px Cairo, sans-serif';
-                }
-                if (ctx.measureText(name).width > 460) {
-                    ctx.font = '900 36px Cairo, sans-serif';
-                }
+                if (ctx.measureText(name).width > 460) ctx.font = '900 44px Cairo, sans-serif';
+                if (ctx.measureText(name).width > 460) ctx.font = '900 36px Cairo, sans-serif';
                 ctx.fillText(name, W - 60, H - 50);
-
                 if (userPhoto) {
                     const photoImg = new Image();
                     photoImg.crossOrigin = 'anonymous';
                     photoImg.onload = function() {
-                        const photoSize = 260;
-                        const photoX = 35;
-                        const photoY = H - 310;
-
-                        ctx.save();
-                        ctx.beginPath();
+                        const photoSize = 260, photoX = 35, photoY = H - 310;
+                        ctx.save(); ctx.beginPath();
                         ctx.arc(photoX + photoSize/2, photoY + photoSize/2, photoSize/2, 0, Math.PI * 2);
-                        ctx.closePath();
-                        ctx.clip();
+                        ctx.closePath(); ctx.clip();
                         ctx.drawImage(photoImg, photoX, photoY, photoSize, photoSize);
-                        ctx.restore();
-
-                        ctx.beginPath();
+                        ctx.restore(); ctx.beginPath();
                         ctx.arc(photoX + photoSize/2, photoY + photoSize/2, photoSize/2, 0, Math.PI * 2);
-                        ctx.strokeStyle = '#3b2d6e';
-                        ctx.lineWidth = 5;
-                        ctx.stroke();
-
+                        ctx.strokeStyle = '#3b2d6e'; ctx.lineWidth = 5; ctx.stroke();
                         finishDownload(canvas, name);
                     };
                     photoImg.src = userPhoto;
-                } else {
-                    finishDownload(canvas, name);
-                }
+                } else { finishDownload(canvas, name); }
             };
             templateImg.src = templates[currentGender];
         }
@@ -637,8 +295,7 @@
                     const link = document.createElement('a');
                     link.download = 'تهنئة_عيد_الفطر_' + genderText + '_' + name + '.png';
                     link.href = URL.createObjectURL(blob);
-                    link.click();
-                    URL.revokeObjectURL(link.href);
+                    link.click(); URL.revokeObjectURL(link.href);
                     document.getElementById('loadingOverlay').classList.remove('active');
                 }, 'image/png');
             }, 300);
@@ -646,7 +303,6 @@
 
         function resetForm() {
             document.getElementById('nameSelect').selectedIndex = 0;
-            document.getElementById('customNameWrapper').style.display = 'none';
             document.getElementById('customNameInput').value = '';
             document.getElementById('nameOverlay').textContent = '';
             document.getElementById('photoInput').value = '';
