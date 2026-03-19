@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>بطاقة تهنئة عيد الفطر المبارك</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800;900&display=swap');
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Cairo', sans-serif;
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            color: #fff;
+        }
+
+        h1 {
+            font-size: 1.8rem;
+            margin-bottom: 8px;
+            background: linear-gradient(90deg, #e2b04a, #f0d68a, #e2b04a);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-align: center;
+        }
+
+        .subtitle {
+            font-size: 0.95rem;
+            color: #a0aec0;
+            margin-bottom: 25px;
+            text-align: center;
+        }
+
+        .main-container {
+            display: flex;
+            gap: 30px;
+            align-items: flex-start;
+            flex-wrap: wrap;
+            justify-content: center;
+            max-width: 1100px;
+            width: 100%;
+        }
+
+        .controls {
+            background: rgba(255,255,255,0.07);
+            backdrop-filter: blur(12px);
+            border-radius: 16px;
+            padding: 28px;
+            width: 320px;
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .controls label {
+            display: block;
+            font-size: 0.95rem;
+            font-weight: 700;
+            margin-bottom: 8px;
+            color: #e2b04a;
+        }
+
+        .controls input[type="text"] {
+            width: 100%;
+            padding: 12px 16px;
+            border-radius: 10px;
+            border: 1px solid rgba(255,255,255,0.2);
+            background: rgba(255,255,255,0.08);
+            color: #fff;
+            font-family: 'Cairo', sans-serif;
+            font-size: 1.05rem;
+            font-weight: 700;
+            outline: none;
+            transition: border-color 0.3s;
+            margin-bottom: 20px;
+            text-align: right;
+        }
+
+        .controls input[type="text"]:focus {
+            border-color: #e2b04a;
+        }
+
+        .controls input[type="text"]::placeholder {
+            color: rgba(255,255,255,0.35);
+        }
+
+        .photo-upload-area {
+            border: 2px dashed rgba(255,255,255,0.2);
+            border-radius: 12px;
+            padding: 20px;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.3s;
+            margin-bottom: 20px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .photo-upload-area:hover {
+            border-color: #e2b04a;
+            background: rgba(226, 176, 74, 0.05);
+        }
+
+        .photo-upload-area input[type="file"] {
+            position: absolute;
+            inset: 0;
+            opacity: 0;
+            cursor: pointer;
+        }
+
+        .photo-upload-area .icon {
+            font-size: 2.2rem;
+            margin-bottom: 6px;
+        }
+
+        .photo-upload-area .text {
+            font-size: 0.85rem;
+            color: #a0aec0;
+        }
+
+        .photo-upload-area .preview-thumb {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin: 0 auto;
+            display: none;
+            border: 3px solid #e2b04a;
+        }
+
+        .btn {
+            width: 100%;
+            padding: 13px;
+            border: none;
+            border-radius: 10px;
+            font-family: 'Cairo', sans-serif;
+            font-size: 1.05rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, #e2b04a, #c8941e);
+            color: #1a1a2e;
+            margin-bottom: 10px;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(226,176,74,0.35);
+        }
+
+        .btn-secondary {
+            background: rgba(255,255,255,0.08);
+            color: #a0aec0;
+            border: 1px solid rgba(255,255,255,0.15);
+        }
+
+        .btn-secondary:hover {
+            background: rgba(255,255,255,0.12);
+            color: #fff;
+        }
+
+        .card-preview-wrapper {
+            position: relative;
+        }
+
+        .card-preview {
+            position: relative;
+            width: 360px;
+            height: 640px;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.4);
+        }
+
+        .card-preview img.template-bg {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .name-overlay {
+            position: absolute;
+            bottom: 28px;
+            right: 30px;
+            font-family: 'Cairo', sans-serif;
+            font-size: 1.55rem;
+            font-weight: 900;
+            color: #3b2d6e;
+            text-align: right;
+            direction: rtl;
+            max-width: 200px;
+            line-height: 1.3;
+            text-shadow: 0 1px 2px rgba(255,255,255,0.3);
+        }
+
+        .photo-overlay {
+            position: absolute;
+            bottom: 58px;
+            left: 28px;
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            overflow: hidden;
+            border: 3px solid #3b2d6e;
+            background: rgba(255,255,255,0.15);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .photo-overlay img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .photo-overlay .placeholder-icon {
+            font-size: 2rem;
+            color: rgba(59,45,110,0.4);
+        }
+
+        /* Hidden canvas for download */
+        #downloadCanvas {
+            display: none;
+        }
+
+        .loading-overlay {
+            display: none;
+            position: fixed;
+            inset: 0;
+            background: rgba(0,0,0,0.6);
+            z-index: 999;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .loading-overlay.active {
+            display: flex;
+        }
+
+        .loading-box {
+            background: #1a1a2e;
+            border-radius: 16px;
+            padding: 30px 40px;
+            text-align: center;
+            border: 1px solid rgba(226,176,74,0.3);
+        }
+
+        .spinner {
+            width: 40px;
+            height: 40px;
+            border: 4px solid rgba(226,176,74,0.2);
+            border-top-color: #e2b04a;
+            border-radius: 50%;
+            animation: spin 0.8s linear infinite;
+            margin: 0 auto 12px;
+        }
+
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+
+        .instructions {
+            margin-top: 20px;
+            padding: 14px;
+            border-radius: 10px;
+            background: rgba(226,176,74,0.08);
+            border: 1px solid rgba(226,176,74,0.15);
+            font-size: 0.8rem;
+            color: #a0aec0;
+            line-height: 1.7;
+        }
+
+        .instructions strong {
+            color: #e2b04a;
+        }
+
+        @media (max-width: 768px) {
+            h1 { font-size: 1.4rem; }
+            .controls { width: 100%; max-width: 360px; }
+            .card-preview { width: 320px; height: 568px; }
+            .name-overlay { font-size: 1.3rem; bottom: 24px; right: 26px; }
+            .photo-overlay { width: 65px; height: 65px; bottom: 50px; left: 24px; }
+            .main-container { gap: 20px; }
+        }
+    </style>
+</head>
+<body>
+
+    <h1>بطاقة تهنئة عيد الفطر المبارك 1447هـ</h1>
+    <p class="subtitle">المعهد الوطني للتطوير المهني التعليمي</p>
+
+    <div class="main-container">
+        <div class="controls">
+            <label for="nameInput">اسم الموظف</label>
+            <input type="text" id="nameInput" placeholder="اكتب اسمك هنا..." oninput="updateName()">
+
+            <label>الصورة الشخصية</label>
+            <div class="photo-upload-area" id="uploadArea">
+                <input type="file" id="photoInput" accept="image/*" onchange="handlePhoto(event)">
+                <div class="icon" id="uploadIcon">📷</div>
+                <div class="text" id="uploadText">اضغط لرفع صورتك الشخصية</div>
+                <img class="preview-thumb" id="previewThumb">
+            </div>
+
+            <button class="btn btn-primary" onclick="downloadCard()">⬇ تحميل البطاقة</button>
+            <button class="btn btn-secondary" onclick="resetForm()">🔄 إعادة تعيين</button>
+
+            <div class="instructions">
+                <strong>الخطوات:</strong><br>
+                1. اكتب اسمك في الحقل أعلاه<br>
+                2. ارفع صورتك الشخصية (اختياري)<br>
+                3. اضغط "تحميل البطاقة" للحفظ
+            </div>
+        </div>
+
+        <div class="card-preview-wrapper">
+            <div class="card-preview" id="cardPreview">
+                <img class="template-bg" id="templateBg" src="template.jpeg" crossorigin="anonymous">
+                <div class="name-overlay" id="nameOverlay"></div>
+                <div class="photo-overlay" id="photoOverlay">
+                    <span class="placeholder-icon" id="photoPlaceholder">👤</span>
+                    <img id="overlayPhoto" style="display:none;">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <canvas id="downloadCanvas"></canvas>
+
+    <div class="loading-overlay" id="loadingOverlay">
+        <div class="loading-box">
+            <div class="spinner"></div>
+            <div>جاري تحضير البطاقة...</div>
+        </div>
+    </div>
+
+    <script>
+        let userPhoto = null;
+
+        function updateName() {
+            const name = document.getElementById('nameInput').value;
+            document.getElementById('nameOverlay').textContent = name;
+        }
+
+        function handlePhoto(event) {
+            const file = event.target.files[0];
+            if (!file) return;
+
+            const reader = new FileReader();
+            reader.onload = function(e) {
+                userPhoto = e.target.result;
+                
+                // Update preview thumb
+                const thumb = document.getElementById('previewThumb');
+                thumb.src = userPhoto;
+                thumb.style.display = 'block';
+                document.getElementById('uploadIcon').style.display = 'none';
+                document.getElementById('uploadText').textContent = 'اضغط لتغيير الصورة';
+
+                // Update overlay
+                const overlayImg = document.getElementById('overlayPhoto');
+                overlayImg.src = userPhoto;
+                overlayImg.style.display = 'block';
+                document.getElementById('photoPlaceholder').style.display = 'none';
+            };
+            reader.readAsDataURL(file);
+        }
+
+        function downloadCard() {
+            const name = document.getElementById('nameInput').value.trim();
+            if (!name) {
+                alert('الرجاء كتابة الاسم أولاً');
+                return;
+            }
+
+            document.getElementById('loadingOverlay').classList.add('active');
+
+            const canvas = document.getElementById('downloadCanvas');
+            const ctx = canvas.getContext('2d');
+
+            // Original template dimensions
+            const W = 900;
+            const H = 1600;
+            canvas.width = W;
+            canvas.height = H;
+
+            const templateImg = new Image();
+            templateImg.crossOrigin = 'anonymous';
+            templateImg.onload = function() {
+                ctx.drawImage(templateImg, 0, 0, W, H);
+
+                // Draw name - bottom right
+                ctx.textAlign = 'right';
+                ctx.textBaseline = 'bottom';
+                ctx.fillStyle = '#3b2d6e';
+                ctx.font = '900 56px Cairo, sans-serif';
+                
+                // Handle long names
+                const maxWidth = 460;
+                const nameText = name;
+                if (ctx.measureText(nameText).width > maxWidth) {
+                    ctx.font = '900 44px Cairo, sans-serif';
+                }
+                
+                ctx.fillText(nameText, W - 60, H - 50);
+
+                // Draw photo if exists
+                if (userPhoto) {
+                    const photoImg = new Image();
+                    photoImg.crossOrigin = 'anonymous';
+                    photoImg.onload = function() {
+                        const photoSize = 160;
+                        const photoX = 55;
+                        const photoY = H - 195;
+
+                        // Clip circle
+                        ctx.save();
+                        ctx.beginPath();
+                        ctx.arc(photoX + photoSize/2, photoY + photoSize/2, photoSize/2, 0, Math.PI * 2);
+                        ctx.closePath();
+                        ctx.clip();
+                        ctx.drawImage(photoImg, photoX, photoY, photoSize, photoSize);
+                        ctx.restore();
+
+                        // Circle border
+                        ctx.beginPath();
+                        ctx.arc(photoX + photoSize/2, photoY + photoSize/2, photoSize/2, 0, Math.PI * 2);
+                        ctx.strokeStyle = '#3b2d6e';
+                        ctx.lineWidth = 5;
+                        ctx.stroke();
+
+                        finishDownload(canvas, name);
+                    };
+                    photoImg.src = userPhoto;
+                } else {
+                    finishDownload(canvas, name);
+                }
+            };
+            templateImg.src = document.getElementById('templateBg').src;
+        }
+
+        function finishDownload(canvas, name) {
+            setTimeout(() => {
+                canvas.toBlob(function(blob) {
+                    const link = document.createElement('a');
+                    link.download = 'تهنئة_عيد_الفطر_' + name + '.png';
+                    link.href = URL.createObjectURL(blob);
+                    link.click();
+                    URL.revokeObjectURL(link.href);
+                    document.getElementById('loadingOverlay').classList.remove('active');
+                }, 'image/png');
+            }, 300);
+        }
+
+        function resetForm() {
+            document.getElementById('nameInput').value = '';
+            document.getElementById('nameOverlay').textContent = '';
+            
+            document.getElementById('photoInput').value = '';
+            userPhoto = null;
+            
+            document.getElementById('previewThumb').style.display = 'none';
+            document.getElementById('uploadIcon').style.display = 'block';
+            document.getElementById('uploadText').textContent = 'اضغط لرفع صورتك الشخصية';
+            
+            document.getElementById('overlayPhoto').style.display = 'none';
+            document.getElementById('photoPlaceholder').style.display = 'inline';
+        }
+    </script>
+</body>
+</html>
