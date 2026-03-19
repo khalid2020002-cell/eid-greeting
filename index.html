@@ -3,19 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>بطاقة تهنئة عيد الفطر المبارك</title>
+    <title>بطاقة تهنئة عيد الفطر المبارك 1447هـ</title>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800;900&display=swap');
         
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
         
         body {
             font-family: 'Cairo', sans-serif;
-            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
             min-height: 100vh;
             display: flex;
             flex-direction: column;
@@ -23,11 +18,27 @@
             justify-content: center;
             padding: 20px;
             color: #fff;
+            background-color: #d6d2cc;
+            background-image: url('brand-bg.jpeg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            position: relative;
         }
+
+        body::before {
+            content: '';
+            position: fixed;
+            inset: 0;
+            background: rgba(26, 26, 46, 0.82);
+            z-index: 0;
+        }
+
+        body > * { position: relative; z-index: 1; }
 
         h1 {
             font-size: 1.8rem;
-            margin-bottom: 8px;
+            margin-bottom: 6px;
             background: linear-gradient(90deg, #e2b04a, #f0d68a, #e2b04a);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
@@ -36,7 +47,7 @@
 
         .subtitle {
             font-size: 0.95rem;
-            color: #a0aec0;
+            color: #c0b8d0;
             margin-bottom: 25px;
             text-align: center;
         }
@@ -53,10 +64,10 @@
 
         .controls {
             background: rgba(255,255,255,0.07);
-            backdrop-filter: blur(12px);
-            border-radius: 16px;
+            backdrop-filter: blur(14px);
+            border-radius: 18px;
             padding: 28px;
-            width: 320px;
+            width: 330px;
             border: 1px solid rgba(255,255,255,0.1);
         }
 
@@ -66,6 +77,39 @@
             font-weight: 700;
             margin-bottom: 8px;
             color: #e2b04a;
+        }
+
+        .gender-toggle {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+
+        .gender-btn {
+            flex: 1;
+            padding: 12px;
+            border-radius: 12px;
+            border: 2px solid rgba(255,255,255,0.15);
+            background: rgba(255,255,255,0.05);
+            color: #a0aec0;
+            font-family: 'Cairo', sans-serif;
+            font-size: 1.05rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.3s;
+            text-align: center;
+        }
+
+        .gender-btn:hover {
+            border-color: rgba(226,176,74,0.4);
+            background: rgba(226,176,74,0.08);
+        }
+
+        .gender-btn.active {
+            border-color: #e2b04a;
+            background: linear-gradient(135deg, rgba(226,176,74,0.2), rgba(226,176,74,0.08));
+            color: #e2b04a;
+            box-shadow: 0 0 20px rgba(226,176,74,0.15);
         }
 
         .controls input[type="text"] {
@@ -84,13 +128,8 @@
             text-align: right;
         }
 
-        .controls input[type="text"]:focus {
-            border-color: #e2b04a;
-        }
-
-        .controls input[type="text"]::placeholder {
-            color: rgba(255,255,255,0.35);
-        }
+        .controls input[type="text"]:focus { border-color: #e2b04a; }
+        .controls input[type="text"]::placeholder { color: rgba(255,255,255,0.35); }
 
         .photo-upload-area {
             border: 2px dashed rgba(255,255,255,0.2);
@@ -106,7 +145,7 @@
 
         .photo-upload-area:hover {
             border-color: #e2b04a;
-            background: rgba(226, 176, 74, 0.05);
+            background: rgba(226,176,74,0.05);
         }
 
         .photo-upload-area input[type="file"] {
@@ -116,15 +155,8 @@
             cursor: pointer;
         }
 
-        .photo-upload-area .icon {
-            font-size: 2.2rem;
-            margin-bottom: 6px;
-        }
-
-        .photo-upload-area .text {
-            font-size: 0.85rem;
-            color: #a0aec0;
-        }
+        .photo-upload-area .icon { font-size: 2.2rem; margin-bottom: 6px; }
+        .photo-upload-area .text { font-size: 0.85rem; color: #a0aec0; }
 
         .photo-upload-area .preview-thumb {
             width: 80px;
@@ -168,10 +200,6 @@
         .btn-secondary:hover {
             background: rgba(255,255,255,0.12);
             color: #fff;
-        }
-
-        .card-preview-wrapper {
-            position: relative;
         }
 
         .card-preview {
@@ -226,14 +254,11 @@
         }
 
         .photo-overlay .placeholder-icon {
-            font-size: 2rem;
+            font-size: 2.8rem;
             color: rgba(59,45,110,0.4);
         }
 
-        /* Hidden canvas for download */
-        #downloadCanvas {
-            display: none;
-        }
+        #downloadCanvas { display: none; }
 
         .loading-overlay {
             display: none;
@@ -245,9 +270,7 @@
             justify-content: center;
         }
 
-        .loading-overlay.active {
-            display: flex;
-        }
+        .loading-overlay.active { display: flex; }
 
         .loading-box {
             background: #1a1a2e;
@@ -267,9 +290,7 @@
             margin: 0 auto 12px;
         }
 
-        @keyframes spin {
-            to { transform: rotate(360deg); }
-        }
+        @keyframes spin { to { transform: rotate(360deg); } }
 
         .instructions {
             margin-top: 20px;
@@ -282,9 +303,7 @@
             line-height: 1.7;
         }
 
-        .instructions strong {
-            color: #e2b04a;
-        }
+        .instructions strong { color: #e2b04a; }
 
         @media (max-width: 768px) {
             h1 { font-size: 1.4rem; }
@@ -303,7 +322,13 @@
 
     <div class="main-container">
         <div class="controls">
-            <label for="nameInput">اسم الموظف</label>
+            <label>نوع البطاقة</label>
+            <div class="gender-toggle">
+                <button class="gender-btn active" id="btnBrother" onclick="selectGender('brother')">أخوكم</button>
+                <button class="gender-btn" id="btnSister" onclick="selectGender('sister')">أختكم</button>
+            </div>
+
+            <label for="nameInput">اسم الموظف/ة</label>
             <input type="text" id="nameInput" placeholder="اكتب اسمك هنا..." oninput="updateName()">
 
             <label>الصورة الشخصية</label>
@@ -319,15 +344,16 @@
 
             <div class="instructions">
                 <strong>الخطوات:</strong><br>
-                1. اكتب اسمك في الحقل أعلاه<br>
-                2. ارفع صورتك الشخصية (اختياري)<br>
-                3. اضغط "تحميل البطاقة" للحفظ
+                1. اختر نوع البطاقة (أخوكم / أختكم)<br>
+                2. اكتب اسمك في الحقل<br>
+                3. ارفع صورتك الشخصية (اختياري)<br>
+                4. اضغط "تحميل البطاقة" للحفظ
             </div>
         </div>
 
         <div class="card-preview-wrapper">
             <div class="card-preview" id="cardPreview">
-                <img class="template-bg" id="templateBg" src="template.jpeg" crossorigin="anonymous">
+                <img class="template-bg" id="templateBg" src="template-brother.jpeg" crossorigin="anonymous">
                 <div class="name-overlay" id="nameOverlay"></div>
                 <div class="photo-overlay" id="photoOverlay">
                     <span class="placeholder-icon" id="photoPlaceholder">👤</span>
@@ -348,28 +374,35 @@
 
     <script>
         let userPhoto = null;
+        let currentGender = 'brother';
+
+        const templates = {
+            brother: 'template-brother.jpeg',
+            sister: 'template-sister.jpeg'
+        };
+
+        function selectGender(gender) {
+            currentGender = gender;
+            document.getElementById('btnBrother').classList.toggle('active', gender === 'brother');
+            document.getElementById('btnSister').classList.toggle('active', gender === 'sister');
+            document.getElementById('templateBg').src = templates[gender];
+        }
 
         function updateName() {
-            const name = document.getElementById('nameInput').value;
-            document.getElementById('nameOverlay').textContent = name;
+            document.getElementById('nameOverlay').textContent = document.getElementById('nameInput').value;
         }
 
         function handlePhoto(event) {
             const file = event.target.files[0];
             if (!file) return;
-
             const reader = new FileReader();
             reader.onload = function(e) {
                 userPhoto = e.target.result;
-                
-                // Update preview thumb
                 const thumb = document.getElementById('previewThumb');
                 thumb.src = userPhoto;
                 thumb.style.display = 'block';
                 document.getElementById('uploadIcon').style.display = 'none';
                 document.getElementById('uploadText').textContent = 'اضغط لتغيير الصورة';
-
-                // Update overlay
                 const overlayImg = document.getElementById('overlayPhoto');
                 overlayImg.src = userPhoto;
                 overlayImg.style.display = 'block';
@@ -380,19 +413,13 @@
 
         function downloadCard() {
             const name = document.getElementById('nameInput').value.trim();
-            if (!name) {
-                alert('الرجاء كتابة الاسم أولاً');
-                return;
-            }
+            if (!name) { alert('الرجاء كتابة الاسم أولاً'); return; }
 
             document.getElementById('loadingOverlay').classList.add('active');
 
             const canvas = document.getElementById('downloadCanvas');
             const ctx = canvas.getContext('2d');
-
-            // Original template dimensions
-            const W = 900;
-            const H = 1600;
+            const W = 900, H = 1600;
             canvas.width = W;
             canvas.height = H;
 
@@ -401,22 +428,15 @@
             templateImg.onload = function() {
                 ctx.drawImage(templateImg, 0, 0, W, H);
 
-                // Draw name - bottom right
                 ctx.textAlign = 'right';
                 ctx.textBaseline = 'bottom';
                 ctx.fillStyle = '#3b2d6e';
                 ctx.font = '900 56px Cairo, sans-serif';
-                
-                // Handle long names
-                const maxWidth = 460;
-                const nameText = name;
-                if (ctx.measureText(nameText).width > maxWidth) {
+                if (ctx.measureText(name).width > 460) {
                     ctx.font = '900 44px Cairo, sans-serif';
                 }
-                
-                ctx.fillText(nameText, W - 60, H - 50);
+                ctx.fillText(name, W - 60, H - 50);
 
-                // Draw photo if exists
                 if (userPhoto) {
                     const photoImg = new Image();
                     photoImg.crossOrigin = 'anonymous';
@@ -425,7 +445,6 @@
                         const photoX = 35;
                         const photoY = H - 310;
 
-                        // Clip circle
                         ctx.save();
                         ctx.beginPath();
                         ctx.arc(photoX + photoSize/2, photoY + photoSize/2, photoSize/2, 0, Math.PI * 2);
@@ -434,7 +453,6 @@
                         ctx.drawImage(photoImg, photoX, photoY, photoSize, photoSize);
                         ctx.restore();
 
-                        // Circle border
                         ctx.beginPath();
                         ctx.arc(photoX + photoSize/2, photoY + photoSize/2, photoSize/2, 0, Math.PI * 2);
                         ctx.strokeStyle = '#3b2d6e';
@@ -448,14 +466,15 @@
                     finishDownload(canvas, name);
                 }
             };
-            templateImg.src = document.getElementById('templateBg').src;
+            templateImg.src = templates[currentGender];
         }
 
         function finishDownload(canvas, name) {
             setTimeout(() => {
                 canvas.toBlob(function(blob) {
+                    const genderText = currentGender === 'brother' ? 'أخوكم' : 'أختكم';
                     const link = document.createElement('a');
-                    link.download = 'تهنئة_عيد_الفطر_' + name + '.png';
+                    link.download = 'تهنئة_عيد_الفطر_' + genderText + '_' + name + '.png';
                     link.href = URL.createObjectURL(blob);
                     link.click();
                     URL.revokeObjectURL(link.href);
@@ -467,16 +486,14 @@
         function resetForm() {
             document.getElementById('nameInput').value = '';
             document.getElementById('nameOverlay').textContent = '';
-            
             document.getElementById('photoInput').value = '';
             userPhoto = null;
-            
             document.getElementById('previewThumb').style.display = 'none';
             document.getElementById('uploadIcon').style.display = 'block';
             document.getElementById('uploadText').textContent = 'اضغط لرفع صورتك الشخصية';
-            
             document.getElementById('overlayPhoto').style.display = 'none';
             document.getElementById('photoPlaceholder').style.display = 'inline';
+            selectGender('brother');
         }
     </script>
 </body>
