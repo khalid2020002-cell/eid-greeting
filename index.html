@@ -67,7 +67,7 @@
             backdrop-filter: blur(14px);
             border-radius: 18px;
             padding: 28px;
-            width: 330px;
+            width: 340px;
             border: 1px solid rgba(255,255,255,0.1);
         }
 
@@ -112,6 +112,39 @@
             box-shadow: 0 0 20px rgba(226,176,74,0.15);
         }
 
+        .controls select {
+            width: 100%;
+            padding: 12px 16px;
+            border-radius: 10px;
+            border: 1px solid rgba(255,255,255,0.2);
+            background: rgba(255,255,255,0.08);
+            color: #fff;
+            font-family: 'Cairo', sans-serif;
+            font-size: 0.95rem;
+            font-weight: 700;
+            outline: none;
+            transition: border-color 0.3s;
+            margin-bottom: 12px;
+            text-align: right;
+            direction: rtl;
+            cursor: pointer;
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            appearance: none;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8'%3E%3Cpath d='M6 8L0 0h12z' fill='%23e2b04a'/%3E%3C/svg%3E");
+            background-repeat: no-repeat;
+            background-position: left 16px center;
+        }
+
+        .controls select:focus { border-color: #e2b04a; }
+
+        .controls select option {
+            background: #1a1a2e;
+            color: #fff;
+            font-family: 'Cairo', sans-serif;
+            padding: 8px;
+        }
+
         .controls input[type="text"] {
             width: 100%;
             padding: 12px 16px;
@@ -130,6 +163,16 @@
 
         .controls input[type="text"]:focus { border-color: #e2b04a; }
         .controls input[type="text"]::placeholder { color: rgba(255,255,255,0.35); }
+
+        #customNameWrapper {
+            display: none;
+            animation: fadeIn 0.3s ease;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-5px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
 
         .photo-upload-area {
             border: 2px dashed rgba(255,255,255,0.2);
@@ -247,16 +290,8 @@
             justify-content: center;
         }
 
-        .photo-overlay img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-
-        .photo-overlay .placeholder-icon {
-            font-size: 2.8rem;
-            color: rgba(59,45,110,0.4);
-        }
+        .photo-overlay img { width: 100%; height: 100%; object-fit: cover; }
+        .photo-overlay .placeholder-icon { font-size: 2.8rem; color: rgba(59,45,110,0.4); }
 
         #downloadCanvas { display: none; }
 
@@ -328,8 +363,108 @@
                 <button class="gender-btn" id="btnSister" onclick="selectGender('sister')">أختكم</button>
             </div>
 
-            <label for="nameInput">اسم الموظف/ة</label>
-            <input type="text" id="nameInput" placeholder="اكتب اسمك هنا..." oninput="updateName()">
+            <label for="nameSelect">اختر اسمك</label>
+            <select id="nameSelect" onchange="handleNameSelect()">
+                <option value="" disabled selected>-- اختر اسمك من القائمة --</option>
+                <option value="أ. عبدالله بن عبدالعزيز العوده">أ. عبدالله بن عبدالعزيز العوده</option>
+                <option value="د. محمد بن عبدالله البنيان">د. محمد بن عبدالله البنيان</option>
+                <option value="د. سعد بن عبدالرحمن القرني">د. سعد بن عبدالرحمن القرني</option>
+                <option value="د. مها بنت شعلان القرني">د. مها بنت شعلان القرني</option>
+                <option value="أ. عبدالباري بن عبد الكريم السلمي">أ. عبدالباري بن عبد الكريم السلمي</option>
+                <option value="د. فريال بنت عبدالله الحقباني">د. فريال بنت عبدالله الحقباني</option>
+                <option value="أ. نايف بن علي الحربي">أ. نايف بن علي الحربي</option>
+                <option value="أ. أريج بنت محمد المقحم">أ. أريج بنت محمد المقحم</option>
+                <option value="أ. أسيل بنت صالح السحيباني">أ. أسيل بنت صالح السحيباني</option>
+                <option value="د. آلاء بنت علي الصويان">د. آلاء بنت علي الصويان</option>
+                <option value="أ. الجوهرة بنت سعد الودعان">أ. الجوهرة بنت سعد الودعان</option>
+                <option value="أ. أمل بنت علي الغيث">أ. أمل بنت علي الغيث</option>
+                <option value="أ. جوزاء بنت عبدالعزيز بن جامع">أ. جوزاء بنت عبدالعزيز بن جامع</option>
+                <option value="أ. حسن بن موسى الربعي">أ. حسن بن موسى الربعي</option>
+                <option value="أ. حسن بن عبدالرحمن القحطاني">أ. حسن بن عبدالرحمن القحطاني</option>
+                <option value="د. حسين بن جابر المالكي">د. حسين بن جابر المالكي</option>
+                <option value="أ. حنان بنت حمد العبدالله">أ. حنان بنت حمد العبدالله</option>
+                <option value="أ. خالد بن حمدان الشمري">أ. خالد بن حمدان الشمري</option>
+                <option value="أ. خالد بن عبدالله الرشيد">أ. خالد بن عبدالله الرشيد</option>
+                <option value="د. رفعه بنت هادي عايض اليامي">د. رفعه بنت هادي عايض اليامي</option>
+                <option value="أ. رمزية بنت عبد العزيز العتي">أ. رمزية بنت عبد العزيز العتي</option>
+                <option value="د. رنا بنت عبدالرحمن الخضير">د. رنا بنت عبدالرحمن الخضير</option>
+                <option value="د. رولا بنت محمد القويفلي">د. رولا بنت محمد القويفلي</option>
+                <option value="أ. ريماز بنت ناصر الخليفة">أ. ريماز بنت ناصر الخليفة</option>
+                <option value="أ. سارة بنت فهد الدوسري">أ. سارة بنت فهد الدوسري</option>
+                <option value="أ. سارة بنت عبدالمحسن بن ملافخ">أ. سارة بنت عبدالمحسن بن ملافخ</option>
+                <option value="أ. سعد بن زيد الصقعبي">أ. سعد بن زيد الصقعبي</option>
+                <option value="د. سليمان بن عبدالله المحسن">د. سليمان بن عبدالله المحسن</option>
+                <option value="د. سمر بنت يحيى الشريف">د. سمر بنت يحيى الشريف</option>
+                <option value="أ. سمية بنت محمد مؤذنة">أ. سمية بنت محمد مؤذنة</option>
+                <option value="أ. شمعه بنت على عيسى شلعه">أ. شمعه بنت على عيسى شلعه</option>
+                <option value="أ. صالح بن عبدالرحمن بن حمود">أ. صالح بن عبدالرحمن بن حمود</option>
+                <option value="أ. صالح بن محمد التميمي">أ. صالح بن محمد التميمي</option>
+                <option value="د. صلاح بن سعود العيسى">د. صلاح بن سعود العيسى</option>
+                <option value="أ. عباد بن صلاح عويض المطيري">أ. عباد بن صلاح عويض المطيري</option>
+                <option value="د. عبدالإله بن عبدالله العوبل">د. عبدالإله بن عبدالله العوبل</option>
+                <option value="أ. عبدالله بن حمد الشدوخي">أ. عبدالله بن حمد الشدوخي</option>
+                <option value="أ. عبد الرحمن بن إبراهيم الفوزان">أ. عبد الرحمن بن إبراهيم الفوزان</option>
+                <option value="أ. عبدالعزيز بن محمد المسعود">أ. عبدالعزيز بن محمد المسعود</option>
+                <option value="أ. علي بن أحمد عسيري">أ. علي بن أحمد عسيري</option>
+                <option value="أ. علي بن فرحان الغامدي">أ. علي بن فرحان الغامدي</option>
+                <option value="د. عودة بن شخير العنزي">د. عودة بن شخير العنزي</option>
+                <option value="أ. غزيل بنت سالم الرشيد">أ. غزيل بنت سالم الرشيد</option>
+                <option value="أ. فاتن بنت أحمد الحربي">أ. فاتن بنت أحمد الحربي</option>
+                <option value="د. فاطمة بنت محمد الفضلي">د. فاطمة بنت محمد الفضلي</option>
+                <option value="أ. فاطمة بنت علي الخويطر">أ. فاطمة بنت علي الخويطر</option>
+                <option value="أ. فهد بن عبدالعزيز الحصان">أ. فهد بن عبدالعزيز الحصان</option>
+                <option value="د. فهد بن مصلح عبد الله العتيبي">د. فهد بن مصلح عبد الله العتيبي</option>
+                <option value="أ. فهد بن محمد الحسينان">أ. فهد بن محمد الحسينان</option>
+                <option value="أ. فوزية بنت محمد الشمري">أ. فوزية بنت محمد الشمري</option>
+                <option value="أ. فيصل بن عبدالله اليوسف">أ. فيصل بن عبدالله اليوسف</option>
+                <option value="أ. ماجد بن حمد الحميد">أ. ماجد بن حمد الحميد</option>
+                <option value="أ. منال بنت سعود الناجم">أ. منال بنت سعود الناجم</option>
+                <option value="أ. منيرة بنت محمد القحطاني">أ. منيرة بنت محمد القحطاني</option>
+                <option value="د. مها بنت محمد الصبحي">د. مها بنت محمد الصبحي</option>
+                <option value="أ. نايف بن عبود القحطاني">أ. نايف بن عبود القحطاني</option>
+                <option value="أ. نوال بنت إبراهيم العواد">أ. نوال بنت إبراهيم العواد</option>
+                <option value="أ. نور بن عارف الفرحان">أ. نور بن عارف الفرحان</option>
+                <option value="أ. نورة بنت مفرح ال حبتر">أ. نورة بنت مفرح ال حبتر</option>
+                <option value="أ. هنادي بنت ناصر عسيري">أ. هنادي بنت ناصر عسيري</option>
+                <option value="أ. هناء بنت عثمان الجبير">أ. هناء بنت عثمان الجبير</option>
+                <option value="أ. هناء بنت أحمد الحمراني">أ. هناء بنت أحمد الحمراني</option>
+                <option value="أ. هيلة بنت فهد الصعب">أ. هيلة بنت فهد الصعب</option>
+                <option value="أ. عبير بنت محمد منصور الشعيبي">أ. عبير بنت محمد منصور الشعيبي</option>
+                <option value="أ. منى بنت حمد عبد الله الطريف">أ. منى بنت حمد عبد الله الطريف</option>
+                <option value="أ. مشعل بن عواد العنزي">أ. مشعل بن عواد العنزي</option>
+                <option value="أ. عبير بنت عبدالله العقيل">أ. عبير بنت عبدالله العقيل</option>
+                <option value="أ. ناديه بنت خليل الفريح">أ. ناديه بنت خليل الفريح</option>
+                <option value="أ. وعد بنت دعيج الدعيج">أ. وعد بنت دعيج الدعيج</option>
+                <option value="أ. عبد العزيز بن ناصر الخامسي">أ. عبد العزيز بن ناصر الخامسي</option>
+                <option value="أ. مها بنت فهد ال مخلد">أ. مها بنت فهد ال مخلد</option>
+                <option value="أ. سعود بن عبدالله الحراجين">أ. سعود بن عبدالله الحراجين</option>
+                <option value="أ. صالح بن سالم الشهري">أ. صالح بن سالم الشهري</option>
+                <option value="أ. محمد بن عبدالعزيز المقرن">أ. محمد بن عبدالعزيز المقرن</option>
+                <option value="أ. عبدالعزيز بن صالح الحسيني">أ. عبدالعزيز بن صالح الحسيني</option>
+                <option value="أ. محمد بن عبدالله المليحي">أ. محمد بن عبدالله المليحي</option>
+                <option value="أ. ياسر بن سعود السبر">أ. ياسر بن سعود السبر</option>
+                <option value="أ. سعدون بن عطية الزهراني">أ. سعدون بن عطية الزهراني</option>
+                <option value="أ. بدرية بنت ثامر الظفيري">أ. بدرية بنت ثامر الظفيري</option>
+                <option value="أ. ولاء بنت رجاء المطيري">أ. ولاء بنت رجاء المطيري</option>
+                <option value="أ. فيصل بن احمد الغامدي">أ. فيصل بن احمد الغامدي</option>
+                <option value="أ. معاذ التركي">أ. معاذ التركي</option>
+                <option value="د. شريفة القرني">د. شريفة القرني</option>
+                <option value="أ. فيحان السبيعي">أ. فيحان السبيعي</option>
+                <option value="أ. عمشى بنت خليف الشمري">أ. عمشى بنت خليف الشمري</option>
+                <option value="د. نادر المطيري">د. نادر المطيري</option>
+                <option value="هند بنت خلف الموكاء">هند بنت خلف الموكاء</option>
+                <option value="طارق الحنطي">طارق الحنطي</option>
+                <option value="ايثار راشد">ايثار راشد</option>
+                <option value="فيصل السليم">فيصل السليم</option>
+                <option value="عبدالباري السلمي">عبدالباري السلمي</option>
+                <option value="حمد الغزي">حمد الغزي</option>
+                <option value="__custom__">✏️ أخرى - اكتب اسمك</option>
+            </select>
+
+            <div id="customNameWrapper">
+                <label for="customNameInput">اكتب اسمك</label>
+                <input type="text" id="customNameInput" placeholder="اكتب اسمك هنا..." oninput="updateName()">
+            </div>
 
             <label>الصورة الشخصية</label>
             <div class="photo-upload-area" id="uploadArea">
@@ -345,7 +480,7 @@
             <div class="instructions">
                 <strong>الخطوات:</strong><br>
                 1. اختر نوع البطاقة (أخوكم / أختكم)<br>
-                2. اكتب اسمك في الحقل<br>
+                2. اختر اسمك من القائمة أو اكتبه<br>
                 3. ارفع صورتك الشخصية (اختياري)<br>
                 4. اضغط "تحميل البطاقة" للحفظ
             </div>
@@ -388,8 +523,31 @@
             document.getElementById('templateBg').src = templates[gender];
         }
 
+        function getSelectedName() {
+            const select = document.getElementById('nameSelect');
+            if (select.value === '__custom__') {
+                return document.getElementById('customNameInput').value.trim();
+            }
+            return select.value;
+        }
+
+        function handleNameSelect() {
+            const select = document.getElementById('nameSelect');
+            const customWrapper = document.getElementById('customNameWrapper');
+            
+            if (select.value === '__custom__') {
+                customWrapper.style.display = 'block';
+                document.getElementById('customNameInput').focus();
+                document.getElementById('nameOverlay').textContent = '';
+            } else {
+                customWrapper.style.display = 'none';
+                document.getElementById('customNameInput').value = '';
+                document.getElementById('nameOverlay').textContent = select.value;
+            }
+        }
+
         function updateName() {
-            document.getElementById('nameOverlay').textContent = document.getElementById('nameInput').value;
+            document.getElementById('nameOverlay').textContent = document.getElementById('customNameInput').value;
         }
 
         function handlePhoto(event) {
@@ -412,8 +570,8 @@
         }
 
         function downloadCard() {
-            const name = document.getElementById('nameInput').value.trim();
-            if (!name) { alert('الرجاء كتابة الاسم أولاً'); return; }
+            const name = getSelectedName();
+            if (!name) { alert('الرجاء اختيار أو كتابة الاسم أولاً'); return; }
 
             document.getElementById('loadingOverlay').classList.add('active');
 
@@ -434,6 +592,9 @@
                 ctx.font = '900 56px Cairo, sans-serif';
                 if (ctx.measureText(name).width > 460) {
                     ctx.font = '900 44px Cairo, sans-serif';
+                }
+                if (ctx.measureText(name).width > 460) {
+                    ctx.font = '900 36px Cairo, sans-serif';
                 }
                 ctx.fillText(name, W - 60, H - 50);
 
@@ -484,7 +645,9 @@
         }
 
         function resetForm() {
-            document.getElementById('nameInput').value = '';
+            document.getElementById('nameSelect').selectedIndex = 0;
+            document.getElementById('customNameWrapper').style.display = 'none';
+            document.getElementById('customNameInput').value = '';
             document.getElementById('nameOverlay').textContent = '';
             document.getElementById('photoInput').value = '';
             userPhoto = null;
